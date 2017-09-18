@@ -1739,7 +1739,7 @@ section.forms .line {
   height: 100%;
   display: block;
   z-index: -1;
-  background: url(../img/bg.jpg);
+  background: url(bg.jpg);
   background-size: cover;
   -webkit-filter: blur(10px);
   filter: blur(10px);
@@ -1753,6 +1753,13 @@ section.forms .line {
   min-height: 100vh;
   z-index: 1;
   padding: 20px;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+
+.login-page .container:hover {
+  opacity: 1;
+  filter: alpha(opacity=100);
 }
 
 .login-page .form-holder {
