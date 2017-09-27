@@ -1,0 +1,61 @@
+<div class="card-body"  >
+  <form class="form-horizontal">
+    <div class="row">
+      <label class="col-sm-2 form-control-label">Persona to add</label>
+      <div class="col-sm-10">
+        <div class="form-group-material">
+          <input id="register-name" type="text" name="registerName" required class="input-material">
+          <span class="help-block-none">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+          <label for="register-name" class="label-material">Name</label>
+        </div>
+        <div class="form-group-material row">
+          <div class="col-md-6">
+              <input id="register-phone" type="tel" name="registerPhone" required class="input-material">
+              <label for="register-phone" class="label-material">Phone</label>
+          </div>
+          <div class="col-md-6">
+              <input id="register-email" type="email" name="registerEmail" required class="input-material">
+              <label for="register-email" class="label-material">Email</label>
+          </div>
+        </div>
+        <div class="form-group-material">
+          <input id="register-address" type="text" name="registerAddress" required class="input-material">
+          <label for="register-address" class="label-material">Address</label>
+        </div>
+        <div class="form-group-material row">
+          <div class="col-md-6">
+            <input id="register-date" type="date" name="registerDate" required class="input-material">
+            <span class="help-block-none">Registre a data de inclusão.</span>
+          </div>
+          <div class="col-md-6">
+            <input id="register-picture" disabled="" type="file" name="registerPicture" required class="input-material">
+            <span class="help-block-none">Selecione uma imagem para esse contato.</span>
+          </div>
+        </div>
+        <div class="form-group-material">
+          <label class="label-material">Situation</label>
+          <div class="i-checks">
+            <input id="radioCustom1" type="radio" value="1" name="Militante" class="radio-template">
+            <label for="radioCustom1">Militante</label>
+          </div>
+          <div class="i-checks">
+            <input id="radioCustom2" type="radio" value="2" name="Contribuinte" class="radio-template">
+            <label for="radioCustom2">Contribuinte</label>
+          </div>
+          <div class="i-checks">
+            <input id="radioCustom3" type="radio" checked="" value="3" name="Contato" class="radio-template">
+            <label for="radioCustom3">Contato</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="line"></div>
+    <div class="form-group row">
+      <div class="col-sm-4 offset-sm-3">
+        <button type="submit" class="btn btn-secondary">Cancel</button>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+    <div class="line"></div>
+  </form>
+</div>
