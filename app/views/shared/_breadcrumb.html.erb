@@ -1,7 +1,23 @@
-<ul class="breadcrumb">
-  <div class="container-fluid">
-    <li class="breadcrumb-item">
-      <%= link_to "Home", dashboard_path %>
-    <li class="breadcrumb-item active">People</li>
-  </div>
-</ul>
+<!-- Breadcrumb -->
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Home</li>
+  <li class="breadcrumb-item">
+    <%= link_to "Admin", dashboard_path %>
+  </li>
+  <li class="breadcrumb-item active">Dashboard</li>
+
+  <!-- Breadcrumb Menu-->
+  <li class="breadcrumb-menu d-md-down-none">
+    <div class="btn-group" role="group" aria-label="Button group">
+      <%= link_to dashboard_path, :class => "btn" do %>
+        <%= fa_icon "commenting-o" %>
+      <% end %>
+      <%= link_to dashboard_path, :class => "btn" do %>
+        <%= fa_icon "line-chart", text: "Dashboard" %>
+      <% end %>
+      <%= link_to dashboard_path, :class => "btn" do %>
+        <%= fa_icon "cogs", text: "Settings" %>
+      <% end %>
+    </div>
+  </li>
+</ol>

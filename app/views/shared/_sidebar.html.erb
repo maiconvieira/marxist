@@ -1,0 +1,123 @@
+<div class="sidebar">
+  <nav class="sidebar-nav">
+    <ul class="nav">
+      <li class="nav-item">
+        <%= link_to dashboard_path, :class => "nav-link" do %>
+          <%= fa_icon "tachometer", text: "Dashboard" %>
+          <%= content_tag :span, "NEW", :class => "badge badge-primary" %>
+        <% end %>
+      </li>
+      <li class="nav-title">
+        UI Elements
+      </li>
+      <li class="nav-item nav-dropdown">
+        <%= link_to "#", :class => "nav-link nav-dropdown-toggle" do %>
+          <%= fa_icon "puzzle-piece", text: "Components" %>
+        <% end %>
+        <ul class="nav-dropdown-items">
+          <li class="nav-item">
+            <%= link_to "components-buttons.html", :class => "nav-link" do %>
+              <%= fa_icon "puzzle-piece", text: "Buttons" %>
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "components-social-buttons.html", :class => "nav-link" do %>
+              <%= fa_icon "puzzle-piece", text: "Social Buttons" %>
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "components-cards.html", :class => "nav-link" do %>
+              <%= fa_icon "puzzle-piece", text: "Cards" %>
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "components-forms.html", :class => "nav-link" do %>
+              <%= fa_icon "puzzle-piece", text: "Forms" %>
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "components-modals.html", :class => "nav-link" do %>
+              <%= fa_icon "puzzle-piece", text: "Modals" %>
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "components-switches.html", :class => "nav-link" do %>
+              <%= fa_icon "puzzle-piece", text: "Switches" %>
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "components-tables.html", :class => "nav-link" do %>
+              <%= fa_icon "puzzle-piece", text: "Tables" %>
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "components-tabs.html", :class => "nav-link" do %>
+              <%= fa_icon "puzzle-piece", text: "Tabs" %>
+            <% end %>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item nav-dropdown">
+        <%= link_to "#", :class => "nav-link nav-dropdown-toggle" do %>
+          <%= fa_icon "star-o", text: "Icons" %>
+        <% end %>
+        <ul class="nav-dropdown-items">
+          <li class="nav-item">
+            <%= link_to "icons-font-awesome.html", :class => "nav-link" do %>
+              <%= fa_icon "star-o", text: "Font Awesome" %>
+              <%= content_tag :span, "4.7", :class => "badge badge-secondary" %>
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "icons-simple-line-icons.html", :class => "nav-link" do %>
+              <%= fa_icon "star-o", text: "Simple Line Icons" %>
+            <% end %>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <%= link_to "widgets.html", :class => "nav-link" do %>
+          <%= fa_icon "calculator", text: "Icons" %>
+          <%= content_tag :span, "NEW", :class => "badge badge-primary" %>
+        <% end %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "charts.html", :class => "nav-link" do %>
+          <%= fa_icon "pie-chart", text: "Charts" %>
+        <% end %>
+      </li>
+      <li class="divider"></li>
+      <li class="nav-title">
+        Extras
+      </li>
+      <li class="nav-item nav-dropdown">
+        <%= link_to "#", :class => "nav-link nav-dropdown-toggle" do %>
+          <%= fa_icon "laptop", text: "Pages" %>
+        <% end %>
+        <ul class="nav-dropdown-items">
+          <li class="nav-item">
+            <%= link_to "pages-login.html", :class => "nav-link" do %>
+              <%= fa_icon "laptop", text: "Login" %>
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "pages-register.html", :class => "nav-link" do %>
+              <%= fa_icon "laptop", text: "Register" %>
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "pages-404.html", :class => "nav-link" do %>
+              <%= fa_icon "laptop", text: "Error 404" %>
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "pages-500.html", :class => "nav-link" do %>
+              <%= fa_icon "laptop", text: "Error 500" %>
+            <% end %>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <button class="sidebar-minimizer brand-minimizer" type="button"></button>
+</div>

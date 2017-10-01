@@ -11,20 +11,9 @@
  * It is generally better to create a new file per style scope.
  *
 */
-$enable-align: true;
-$enable-background: true;
-$enable-borders: true;
-$enable-clearfix: true;
-$enable-display: true;
-$enable-embed: true;
+
 $enable-flex: true;
-$enable-float: true;
-$enable-position: true;
-$enable-screenreaders: true;
-$enable-sizing: true;
-$enable-spacing: true;
-$enable-text: true;
-$enable-visibility: true;
+
 @import "bootstrap";
+@import "font-awesome.css";
 @import "style.css";
-@import "custom.css";

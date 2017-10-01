@@ -1,90 +1,87 @@
-<!-- Main Navbar-->
-<header class="header">
-  <nav class="navbar">
-    <!-- Search Box-->
-    <div class="search-box">
-      <button class="dismiss"><i class="icon-close"></i></button>
-      <form id="searchForm" action="#" role="search">
-        <input type="search" placeholder="What are you looking for..." class="form-control">
-      </form>
-    </div>
-    <div class="container-fluid">
-      <div class="navbar-holder d-flex align-items-center justify-content-between">
-        <!-- Navbar Header-->
-        <div class="navbar-header">
-          <!-- Navbar Brand -->
-          <%= link_to root_path, :class => "navbar-brand"  do %>
-            <div class="brand-text brand-big hidden-lg-down"><span>Esquerda </span><strong>Marxista</strong></div>
-            <div class="brand-text brand-small"><strong>EM</strong></div>
-          <% end %>
-          <!-- Toggle Button-->
-          <a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
+<header class="app-header navbar">
+  <button class="navbar-toggler mobile-sidebar-toggler d-lg-none mr-auto" type="button">☰</button>
+  <%= link_to "", root_path, :class => "navbar-brand" %>
+  <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button">☰</button>
+
+  <ul class="nav navbar-nav d-md-down-none">
+    <li class="nav-item px-3">
+      <%= link_to "Dashboard", dashboard_path, :class => "nav-link" %>
+    </li>
+    <li class="nav-item px-3">
+      <%= link_to "Users", dashboard_path, :class => "nav-link" %>
+    </li>
+    <li class="nav-item px-3">
+      <%= link_to "Settings", dashboard_path, :class => "nav-link" %>
+    </li>
+  </ul>
+  <ul class="nav navbar-nav ml-auto">
+    <li class="nav-item d-md-down-none">
+      <%= link_to dashboard_path, :class => "nav-link" do %>
+        <%= fa_icon "bell-o" %>
+        <%= content_tag :span, "5", :class => "badge badge-pill badge-danger" %>
+      <% end %>
+    </li>
+    <li class="nav-item d-md-down-none">
+      <%= link_to dashboard_path, :class => "nav-link" do %>
+        <%= fa_icon "list" %>
+      <% end %>
+    </li>
+    <li class="nav-item d-md-down-none">
+      <%= link_to dashboard_path, :class => "nav-link" do %>
+        <%= fa_icon "map-marker" %>
+      <% end %>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+        <%= image_tag "avatars/6.jpg", class: "img-avatar",  alt: "admin@bootstrapmaster.com" %>
+        <%= content_tag :span, "admin", :class => "d-md-down-none" %>
+      </a>
+      <div class="dropdown-menu dropdown-menu-right">
+        <div class="dropdown-header text-center">
+          <strong>Account</strong>
         </div>
-        <!-- Navbar Menu -->
-        <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
-          <!-- Search -->
-          <li class="nav-item d-flex align-items-center"><a id="search" href="#"><i class="icon-search"></i></a></li>
-          <!-- Notifications -->
-          <li class="nav-item dropdown"> <a id="notifications" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-bell-o"></i><span class="badge bg-red">12</span></a>
-            <ul aria-labelledby="notifications" class="dropdown-menu">
-              <li><a rel="nofollow" href="#" class="dropdown-item">
-                  <div class="notification">
-                    <div class="notification-content"><i class="fa fa-envelope bg-green"></i>You have 6 new messages </div>
-                    <div class="notification-time"><small>4 minutes ago</small></div>
-                  </div></a></li>
-              <li><a rel="nofollow" href="#" class="dropdown-item">
-                  <div class="notification">
-                    <div class="notification-content"><i class="fa fa-twitter bg-blue"></i>You have 2 followers</div>
-                    <div class="notification-time"><small>4 minutes ago</small></div>
-                  </div></a></li>
-              <li><a rel="nofollow" href="#" class="dropdown-item">
-                  <div class="notification">
-                    <div class="notification-content"><i class="fa fa-upload bg-orange"></i>Server Rebooted</div>
-                    <div class="notification-time"><small>4 minutes ago</small></div>
-                  </div></a></li>
-              <li><a rel="nofollow" href="#" class="dropdown-item">
-                  <div class="notification">
-                    <div class="notification-content"><i class="fa fa-twitter bg-blue"></i>You have 2 followers</div>
-                    <div class="notification-time"><small>10 minutes ago</small></div>
-                  </div></a></li>
-              <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>view all notifications                                            </strong></a></li>
-            </ul>
-          </li>
-          <!-- Messages                        -->
-          <li class="nav-item dropdown"> <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><i class="fa fa-envelope-o"></i><span class="badge bg-orange">10</span></a>
-            <ul aria-labelledby="notifications" class="dropdown-menu">
-              <li><a rel="nofollow" href="#" class="dropdown-item d-flex">
-                  <div class="msg-profile">
-                    <%= image_tag "avatar-1.jpg", alt: "...", class: "img-fluid rounded-circle" %>
-                  </div>
-                  <div class="msg-body">
-                    <h3 class="h5">Jason Doe</h3><span>Sent You Message</span>
-                  </div></a></li>
-              <li><a rel="nofollow" href="#" class="dropdown-item d-flex">
-                  <div class="msg-profile">
-                    <%= image_tag "avatar-2.jpg", alt: "...", class: "img-fluid rounded-circle" %>
-                  </div>
-                  <div class="msg-body">
-                    <h3 class="h5">Frank Williams</h3><span>Sent You Message</span>
-                  </div></a></li>
-              <li><a rel="nofollow" href="#" class="dropdown-item d-flex">
-                  <div class="msg-profile">
-                    <%= image_tag "avatar-3.jpg", alt: "...", class: "img-fluid rounded-circle" %>
-                  </div>
-                  <div class="msg-body">
-                    <h3 class="h5">Ashley Wood</h3><span>Sent You Message</span>
-                  </div></a></li>
-              <li><a rel="nofollow" href="#" class="dropdown-item all-notifications text-center"> <strong>Read all messages    </strong></a></li>
-            </ul>
-          </li>
-          <!-- Logout    -->
-          <li class="nav-item">
-            <%= link_to root_path, :class => "nav-link logout" do %>
-              Logout<i class="fa fa-sign-out"></i>
-            <% end %>
-          </li>
-        </ul>
+        <%= link_to dashboard_path, :class => "dropdown-item" do %>
+          <%= fa_icon "bell-o", text: "Updates" %>
+          <%= content_tag :span, "42", :class => "badge badge-info" %>
+        <% end %>
+        <%= link_to dashboard_path, :class => "dropdown-item" do %>
+          <%= fa_icon "envelope-o", text: "Messages" %>
+          <%= content_tag :span, "42", :class => "badge badge-success" %>
+        <% end %>
+        <%= link_to dashboard_path, :class => "dropdown-item" do %>
+          <%= fa_icon "tasks", text: "Tasks" %>
+          <%= content_tag :span, "42", :class => "badge badge-danger" %>
+        <% end %>
+        <%= link_to dashboard_path, :class => "dropdown-item" do %>
+          <%= fa_icon "comments", text: "Comments" %>
+          <%= content_tag :span, "42", :class => "badge badge-warning" %>
+        <% end %>
+        <div class="dropdown-header text-center">
+          <strong>Settings</strong>
+        </div>
+        <%= link_to dashboard_path, :class => "dropdown-item" do %>
+          <%= fa_icon "user", text: "Profile" %>
+        <% end %>
+        <%= link_to dashboard_path, :class => "dropdown-item" do %>
+          <%= fa_icon "wrench", text: "Settings" %>
+        <% end %>
+        <%= link_to dashboard_path, :class => "dropdown-item" do %>
+          <%= fa_icon "usd", text: "Payments" %>
+          <%= content_tag :span, "42", :class => "badge badge-secondary" %>
+        <% end %>
+        <%= link_to dashboard_path, :class => "dropdown-item" do %>
+          <%= fa_icon "file", text: "Projects" %>
+          <%= content_tag :span, "42", :class => "badge badge-primary" %>
+        <% end %>
+        <div class="divider"></div>
+        <%= link_to dashboard_path, :class => "dropdown-item" do %>
+          <%= fa_icon "shield", text: "Lock Account" %>
+        <% end %>
+        <%= link_to login_path, :class => "dropdown-item" do %>
+          <%= fa_icon "lock", text: "Logout" %>
+        <% end %>
       </div>
-    </div>
-  </nav>
+    </li>
+  </ul>
+  <!-- <button class="navbar-toggler aside-menu-toggler" type="button">☰</button> -->
 </header>

@@ -8,12 +8,16 @@ end
 gem 'rails', '~> 5.1.3'
 gem 'puma', '~> 3.7'
 gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'font-awesome-rails'
+gem 'simple-line-icons-rails'
 gem 'jquery-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'popper_js', '~> 1.11', '>= 1.11.1'
+gem 'pacejs_rails'
+gem 'chart-js-rails'
 
 group :development, :test do
   gem 'sqlite3'

@@ -14,9 +14,8 @@
 //= require jquery_ujs
 //= require popper
 //= require bootstrap
+//= require pace
+//= require Chart.min
 //= require turbolinks
-//= require tether.min
-//= require jquery.cookie
-//= require jquery.validate.min
-//= require charts-home
-//= require front
+//= require app.js
+//= require main.js
