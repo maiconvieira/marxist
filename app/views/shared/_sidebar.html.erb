@@ -4,12 +4,16 @@
       <li class="nav-item">
         <%= link_to dashboard_path, :class => "nav-link" do %>
           <%= fa_icon "tachometer", text: "Dashboard" %>
-          <%= content_tag :span, "NEW", :class => "badge badge-primary" %>
         <% end %>
       </li>
       <li class="nav-title">
-        UI Elements
+        MENU
       </li>
+        <li class="nav-item">
+          <%= link_to people_path, :class => 'nav-link' do %>
+            <%= fa_icon "user-circle", text: "Pessoas" %>
+          <% end %>
+        </li>
       <li class="nav-item nav-dropdown">
         <%= link_to "#", :class => "nav-link nav-dropdown-toggle" do %>
           <%= fa_icon "puzzle-piece", text: "Components" %>
