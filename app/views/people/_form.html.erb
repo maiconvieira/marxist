@@ -1,61 +1,54 @@
-<div class="card-body"  >
-  <form class="form-horizontal">
-    <div class="row">
-      <label class="col-sm-2 form-control-label">Persona to add</label>
-      <div class="col-sm-10">
-        <div class="form-group-material">
-          <input id="register-name" type="text" name="registerName" required class="input-material">
-          <span class="help-block-none">A block of help text that breaks onto a new line and may extend beyond one line.</span>
-          <label for="register-name" class="label-material">Name</label>
-        </div>
-        <div class="form-group-material row">
-          <div class="col-md-6">
-              <input id="register-phone" type="tel" name="registerPhone" required class="input-material">
-              <label for="register-phone" class="label-material">Phone</label>
-          </div>
-          <div class="col-md-6">
-              <input id="register-email" type="email" name="registerEmail" required class="input-material">
-              <label for="register-email" class="label-material">Email</label>
-          </div>
-        </div>
-        <div class="form-group-material">
-          <input id="register-address" type="text" name="registerAddress" required class="input-material">
-          <label for="register-address" class="label-material">Address</label>
-        </div>
-        <div class="form-group-material row">
-          <div class="col-md-6">
-            <input id="register-date" type="date" name="registerDate" required class="input-material">
-            <span class="help-block-none">Registre a data de inclusão.</span>
-          </div>
-          <div class="col-md-6">
-            <input id="register-picture" disabled="" type="file" name="registerPicture" required class="input-material">
-            <span class="help-block-none">Selecione uma imagem para esse contato.</span>
-          </div>
-        </div>
-        <div class="form-group-material">
-          <label class="label-material">Situation</label>
-          <div class="i-checks">
-            <input id="radioCustom1" type="radio" value="1" name="Militante" class="radio-template">
-            <label for="radioCustom1">Militante</label>
-          </div>
-          <div class="i-checks">
-            <input id="radioCustom2" type="radio" value="2" name="Contribuinte" class="radio-template">
-            <label for="radioCustom2">Contribuinte</label>
-          </div>
-          <div class="i-checks">
-            <input id="radioCustom3" type="radio" checked="" value="3" name="Contato" class="radio-template">
-            <label for="radioCustom3">Contato</label>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="line"></div>
-    <div class="form-group row">
-      <div class="col-sm-4 offset-sm-3">
-        <button type="submit" class="btn btn-secondary">Cancel</button>
-        <button type="submit" class="btn btn-primary">Save</button>
-      </div>
-    </div>
-    <div class="line"></div>
-  </form>
+<div class="card-header">
+  <strong>Editar</strong>
+  Pessoa
 </div>
+<%= form_with(model: person, local: true, html: { enctype: 'multipart/form-data' }) do |form| %>
+<div class="card-body">
+  <div class="form-group row">
+    <div class="col-md-12">
+      <%= form.label :name, 'Nome', class: 'form-control-label' %>
+      <%= form.text_field :name, id: :person_name, class: 'form-control', placeholder: 'Digite o nome completo' %>
+      <%= content_tag :span, "Preencha com o nome completo da pessoa que deseja cadastrar", :class => "help-block" %>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-md-6">
+      <%= form.label :mail, 'E-mail', class: 'form-control-label' %>
+      <%= form.email_field :mail, id: :person_mail, class: 'form-control', placeholder: 'Digite o e-mail' %>
+    </div>
+    <div class="col-md-6">
+      <%= form.label :mail, 'Telefone', class: 'form-control-label' %>
+      <%= form.telephone_field :phone, id: :person_phone, class: 'form-control', placeholder: 'Digite o telefone' %>
+      <%= content_tag :span, "Utilize o seguinte formato: 0(99)99999-9999", :class => "help-block" %>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-md-12">
+      <%= form.label :adrress, 'Endereço', class: 'form-control-label' %>
+      <%= form.text_field :adrress, id: :person_adrress, class: 'form-control', placeholder: 'Digite o endereço completo' %>
+      <%= content_tag :span, "Utilize o seguinte formato: Nome da rua, nº - Bairro - Cidade/UF", :class => "help-block" %>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-md-6">
+      <%= form.label :came_in, 'Data de Cadastro', class: 'form-control-label' %>
+      <%= form.date_field :came_in, id: :person_came_in, class: 'form-control', placeholder: '00/00/0000' %>
+    </div>
+    <div class="col-md-6">
+      <%= form.label :picture, 'Foto', class: 'form-control-label' %>
+      <%= form.file_field :picture, id: :person_picture, class: 'form-control', accept: 'image/png,image/gif,image/jpeg,image/jpg' %>
+    </div>
+  </div>
+  <div class="form-group row">
+    <%= form.label :classification_id, 'Classificação', class: 'col-md-2 form-control-label' %>
+    <div class="col-md-10">
+      <%= form.select :classification_id, Classification.all.collect { |c| [ c.classification, c.id ] }, {prompt: "Selecione uma opção"}, {class: 'form-control'}  %>
+    </div>
+  </div>
+</div>
+<div class="card-footer">
+  <%= button_tag(type: 'submit', :class => 'btn btn-sm btn-primary') do %>
+    <%= fa_icon "dot-circle-o", text: "Enviar" %>
+  <% end %>
+</div>
+<% end %>

@@ -5647,6 +5647,13 @@ body {
 .icon-payment {
   font-size: 24px; }
 
+.people {
+  vertical-align: middle;}
+
+.people img.img-avatar {
+  width: 25px;
+  height: 25px; }
+
 .avatar {
   position: relative;
   display: inline-block;

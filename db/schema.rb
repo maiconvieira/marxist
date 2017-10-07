@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170917203544) do
+ActiveRecord::Schema.define(version: 20171007132746) do
+
+  create_table "classifications", force: :cascade do |t|
+    t.string "classification"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "people", force: :cascade do |t|
     t.string "name"
@@ -21,6 +27,8 @@ ActiveRecord::Schema.define(version: 20170917203544) do
     t.string "picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "classification_id"
+    t.index ["classification_id"], name: "index_people_on_classification_id"
   end
 
 end
