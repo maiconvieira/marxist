@@ -12,6 +12,9 @@
               <div class="card">
                 <div class="card-header">
                   <%= fa_icon "align-justify", text: "Pessoas relaciondas a EM" %>
+                  <%= link_to new_person_path, :class => 'btn btn-sm btn-primary float-right' do %>
+                    <%= fa_icon 'plus-circle', text: 'Adicionar' %>
+                  <% end %>
                 </div>
                 <div class="card-body">
                   <table class="table table-striped">
@@ -75,7 +78,6 @@
       </div>
       <!-- /.conainer-fluid -->
     </main>
-    <% render "shared/aside" %>
   </div>
   <%= render "shared/footer" %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>

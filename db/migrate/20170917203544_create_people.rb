@@ -4,7 +4,7 @@ class CreatePeople < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :phone
       t.string :mail
-      t.text :adrress
+      t.text :address
       t.date :came_in
       t.string :picture
 

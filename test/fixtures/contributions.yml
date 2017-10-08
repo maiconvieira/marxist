@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  school: 1
+  school_value: 9.99
+  school_sum: 9.99
+  congress: 1
+  congress_value: 9.99
+  congress_sum: 9.99
+
+two:
+  school: 1
+  school_value: 9.99
+  school_sum: 9.99
+  congress: 1
+  congress_value: 9.99
+  congress_sum: 9.99

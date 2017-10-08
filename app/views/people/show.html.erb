@@ -1,0 +1,24 @@
+<body class="app header-fixed sidebar-fixed">
+  <%= render "shared/header" %>
+  <div class="app-body">
+    <%= render "shared/sidebar" %>
+    <!-- Main content -->
+    <main class="main">
+      <%= render "shared/breadcrumb" %>
+      <div class="container-fluid">
+        <div class="animated fadeIn">
+          <% if @person.classification.classification == 'Militante' %>
+            <%= render "militante" %>
+          <% elsif @person.classification.classification == 'Contribuinte' %>
+            <%= render "contribuinte" %>
+          <% elsif @person.classification.classification == 'Contato' %>
+            <%= render "contato" %>
+          <% end %>
+        </div>
+      </div>
+      <!-- /.conainer-fluid -->
+    </main>
+  </div>
+  <%= render "shared/footer" %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
+</body>

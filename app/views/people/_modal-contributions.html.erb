@@ -1,0 +1,57 @@
+<div class="modal fade" id="myContribution" tabindex="-1" role="dialog" aria-labelledby="myContributionLabel" style="display: none;" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">
+          <strong><%= fa_icon 'plus-circle', text: 'Adicionar Contribuições' %></strong>
+        </h4>
+      </div>
+      <%= form_with(model:[@person, @person.contributions.build]) do |form| %>
+        <div class="modal-body">
+          <div class="form-group row">
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-4">
+                  <%= form.label :school, 'EQ - Parcelas', class: 'form-control-label' %>
+                  <%= form.text_field :school, id: :school, class: 'form-control' %>
+                </div>
+                <div class="col-md-4">
+                  <%= form.label :school_value, 'Valor parc.', class: 'form-control-label' %>
+                  <%= form.text_field :school_value, id: :school_value, class: 'form-control' %>
+                </div>
+                <div class="col-md-4">
+                  <%= form.label :school_sum, 'Total', class: 'form-control-label' %>
+                  <%= form.text_field :school_sum, id: :school_sum, class: 'form-control' %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-4">
+                  <%= form.label :congress, 'Cong. - Parcelas', class: 'form-control-label' %>
+                  <%= form.text_field :congress, id: :congress, class: 'form-control' %>
+                </div>
+                <div class="col-md-4">
+                  <%= form.label :congress_value, 'Valor parc.', class: 'form-control-label' %>
+                  <%= form.text_field :congress_value, id: :congress_value, class: 'form-control' %>
+                </div>
+                <div class="col-md-4">
+                  <%= form.label :congress_sum, 'Total', class: 'form-control-label' %>
+                  <%= form.text_field :congress_sum, id: :congress_sum, class: 'form-control' %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <%= form.submit :class => 'btn btn-sm btn-primary' %>
+          <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+      <% end %>
+  </div>
+  <!-- /.modal-dialog -->
+</div>

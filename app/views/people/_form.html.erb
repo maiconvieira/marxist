@@ -19,14 +19,14 @@
     <div class="col-md-6">
       <%= form.label :mail, 'Telefone', class: 'form-control-label' %>
       <%= form.telephone_field :phone, id: :person_phone, class: 'form-control', placeholder: 'Digite o telefone' %>
-      <%= content_tag :span, "Utilize o seguinte formato: 0(99)99999-9999", :class => "help-block" %>
+      <%= content_tag :span, "Utilize o seguinte formato: (99)99999-9999", :class => "help-block" %>
     </div>
   </div>
   <div class="form-group row">
     <div class="col-md-12">
-      <%= form.label :adrress, 'Endereço', class: 'form-control-label' %>
-      <%= form.text_field :adrress, id: :person_adrress, class: 'form-control', placeholder: 'Digite o endereço completo' %>
-      <%= content_tag :span, "Utilize o seguinte formato: Nome da rua, nº - Bairro - Cidade/UF", :class => "help-block" %>
+      <%= form.label :address, 'Endereço', class: 'form-control-label' %>
+      <%= form.text_field :address, id: :person_address, class: 'form-control', placeholder: 'Digite o endereço completo' %>
+      <%= content_tag :span, "Utilize o seguinte formato: Nome da rua, nº, Bairro - Cidade/UF", :class => "help-block" %>
     </div>
   </div>
   <div class="form-group row">
@@ -47,8 +47,6 @@
   </div>
 </div>
 <div class="card-footer">
-  <%= button_tag(type: 'submit', :class => 'btn btn-sm btn-primary') do %>
-    <%= fa_icon "dot-circle-o", text: "Enviar" %>
-  <% end %>
+  <%= form.submit :class => 'btn btn-sm btn-primary' %>
 </div>
 <% end %>

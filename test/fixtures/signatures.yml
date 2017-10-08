@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  signature_date: 2017-10-07
+  editions: 1
+  initial_edition: 1
+  final_edition: 1
+
+two:
+  signature_date: 2017-10-07
+  editions: 1
+  initial_edition: 1
+  final_edition: 1

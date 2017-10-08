@@ -4,7 +4,7 @@ one:
   name: MyString
   phone: MyString
   mail: MyString
-  adrress: MyText
+  address: MyText
   came_in: 2017-09-17
   picture: MyString
 
@@ -12,6 +12,6 @@ two:
   name: MyString
   phone: MyString
   mail: MyString
-  adrress: MyText
+  address: MyText
   came_in: 2017-09-17
   picture: MyString

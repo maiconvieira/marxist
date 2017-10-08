@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  quota: 1
+  quota_value: 9.99
+  journal: 1
+  journal_value: 9.99
+  first_campaign: 1
+  first_campaign_value: 9.99
+  second_campaign: 1
+  second_campaign_value: 9.99
+
+two:
+  quota: 1
+  quota_value: 9.99
+  journal: 1
+  journal_value: 9.99
+  first_campaign: 1
+  first_campaign_value: 9.99
+  second_campaign: 1
+  second_campaign_value: 9.99

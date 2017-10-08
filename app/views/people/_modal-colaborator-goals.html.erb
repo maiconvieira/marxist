@@ -1,0 +1,35 @@
+<div class="modal fade" id="myGoal" tabindex="-1" role="dialog" aria-labelledby="myGoalLabel" style="display: none;" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">
+          <strong><%= fa_icon 'plus-circle', text: 'Adicionar Objetivos' %></strong>
+        </h4>
+      </div>
+      <%= form_with(model:[@person, @person.goals.build]) do |form| %>
+        <div class="modal-body">
+          <div class="form-group row">
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-4">
+                  <%= form.label :quota, 'Cota Qtd', class: 'form-control-label' %>
+                  <%= form.text_field :quota, id: :quota, class: 'form-control' %>
+                </div>
+                <div class="col-md-8">
+                  <%= form.label :quota_value, 'Cota Valor', class: 'form-control-label' %>
+                  <%= form.text_field :quota_value, id: :quota_value, class: 'form-control' %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <%= form.submit :class => 'btn btn-sm btn-primary' %>
+          <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+      <% end %>
+  </div>
+  <!-- /.modal-dialog -->
+</div>

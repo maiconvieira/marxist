@@ -1,0 +1,153 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-header">
+        <%= fa_icon 'user-circle', text: @person.classification.classification %>
+        <%= link_to edit_person_path(@person), :class => 'btn btn-sm btn-primary float-right' do %>
+          <%= fa_icon 'pencil', text: 'Editar' %>
+        <% end %>
+        <strong><%= @person.name %></strong>
+      </div>
+      <div class="card-body">
+        <table class="table table-striped">
+          <tr>
+            <td><%= fa_icon 'at', text: @person.mail %></td>
+            <td><%= fa_icon 'mobile', text: @person.phone  %></td>
+            <td><%= fa_icon 'map-marker', text: @person.address %></td>
+            <td><%= fa_icon 'calendar', text: @person.came_in %></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-header">
+        <strong><%= fa_icon 'bullseye', text: 'Assinaturas de F&M' %></strong>
+        <button type="button" class="btn btn-sm btn-primary float-right" data-toggle="modal" data-target="#mySignature">
+          <%= fa_icon 'plus-circle', text: 'Adicionar' %>
+        </button>
+      </div>
+      <div class="card-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Assinatura</th>
+              <th>Edições</th>
+              <th>Inicio</th>
+              <th>Fim</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @person.signatures.each_with_index do |signature, index| %>
+              <tr>
+                <td><%= index + 1%></td>
+                <td><%= signature.editions %></td>
+                <td><%= signature.initial_edition %></td>
+                <td><%= signature.final_edition %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <%= render "modal-signatures" %>
+    </div>
+  </div>
+  <!--/.col-->
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-header">
+        <strong><%= fa_icon 'bullseye', text: 'Objetivos' %></strong>
+        <button type="button" class="btn btn-sm btn-primary float-right" data-toggle="modal" data-target="#myGoal">
+          <%= fa_icon 'plus-circle', text: 'Adicionar' %>
+        </button>
+      </div>
+      <div class="card-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Qtd</th>
+              <th>Valor</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @person.goals.each do |goal| %>
+              <% if goal.equal?(@person.goals.last) %>
+                <tr>
+                  <td>COTA</td>
+                  <td><%= goal.quota %></td>
+                  <td></td>
+                  <td><%= goal.quota_value %></td>
+                </tr>
+                <tr>
+                  <td>JORNAL</td>
+                  <td><%= goal.journal %></td>
+                  <td><%= goal.journal_value %></td>
+                  <td><%= goal.journal_sum %></td>
+                </tr>
+                <tr>
+                  <td>1ª CF</td>
+                  <td><%= goal.first_campaign %></td>
+                  <td><%= goal.first_campaign_value %></td>
+                  <td><%= goal.first_campaign_sum %></td>
+                </tr>
+                <tr>
+                  <td>2ª CF</td>
+                  <td><%= goal.second_campaign %></td>
+                  <td><%= goal.second_campaign_value %></td>
+                  <td><%= goal.second_campaign_sum %></td>
+                </tr>
+              <% end %>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <%= render "modal-goals" %>
+    </div>
+  </div>
+  <!--/.col-->
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-header">
+        <strong><%= fa_icon 'bullseye', text: 'Contribuições' %></strong>
+        <button type="button" class="btn btn-sm btn-primary float-right" data-toggle="modal" data-target="#myContribution">
+          <%= fa_icon 'plus-circle', text: 'Adicionar' %>
+        </button>
+      </div>
+      <div class="card-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Parc.</th>
+              <th>Valor</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @person.contributions.each do |contribution| %>
+              <tr>
+                <td>EQ</td>
+                <td><%= contribution.school %></td>
+                <td><%= contribution.school_value %></td>
+                <td><%= contribution.school_sum %></td>
+              </tr>
+              <tr>
+                <td>Congresso</td>
+                <td><%= contribution.congress %></td>
+                <td><%= contribution.congress_value %></td>
+                <td><%= contribution.congress_sum %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <%= render "modal-contributions" %>
+    </div>
+  </div>
+  <!--/.col-->
+</div>

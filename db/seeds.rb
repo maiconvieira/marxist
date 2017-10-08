@@ -14,9 +14,11 @@ Classification.create(classification: 'Contato')
 
 Person.destroy_all
 peoples = Person.create!( name: 'Maicon Vieira',
-                          phone: '47997236910',
+                          phone: '(47)99723-6910',
                           mail: 'maiconrodrigo.vieira@gmail.com',
-                          adrress: 'Rua: Guararapes, 562 - Floresta - Joinville/SC',
+                          address: 'Rua: Guararapes, 562 - Floresta - Joinville/SC',
+                          came_in: '2016-03-31',
+                          picture: '/assets/avatars/8.jpg',
                           :classification_id => Classification.first.id
                         )
 "Criado #{Classification.count} classificação(ões)."

@@ -5641,6 +5641,11 @@ body {
 .img-avatar {
   border-radius: 50em; }
 
+.float-right img.img-avatar {
+    width: 150px;
+    height: 150px;
+    margin-right: 15px; }
+
 .flag-height {
   height: 24px; }
 
