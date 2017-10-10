@@ -36,13 +36,10 @@ ActiveRecord::Schema.define(version: 20171008205542) do
     t.decimal "quota_value"
     t.integer "journal"
     t.decimal "journal_value"
-    t.decimal "journal_sum"
     t.integer "first_campaign"
     t.decimal "first_campaign_value"
-    t.decimal "first_campaign_sum"
     t.integer "second_campaign"
     t.decimal "second_campaign_value"
-    t.decimal "second_campaign_sum"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "person_id"
